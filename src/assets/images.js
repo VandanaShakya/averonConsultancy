@@ -25,6 +25,11 @@ import service5 from './services/service5.jpg'
 // company logo //
 import logo from './logo.png'
 
+
+
+// about //
+import aboutHero from './about/aboutheroimg.jpg'
+
 const images = {
     health1,
     health2,
@@ -53,6 +58,9 @@ const images = {
     service5,
     pattern,
 
+
+    // about //
+    aboutHero
 
 
 }
