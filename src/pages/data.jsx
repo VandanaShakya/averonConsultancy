@@ -436,3 +436,52 @@ export const companyTieupRightData = [
       backImageUrl: 'https://placehold.co/400x400/d8b4fe/7c3aed?text=Flow', // Back Image URL added
     },
   ];
+
+
+
+  // about us //
+  export const contentData = [
+    {
+      number: 1,
+      title: "Our Mission",
+      content: "To unlock sustainable growth in healthcare and life sciences by bridging global expertise with local market realities.",
+      gradient: 'from-blue-200/50 to-indigo-200/50',
+    },
+    {
+      number: 2,
+      title: "What Sets Us Apart",
+      content: 
+        `Deep Sector Focus – Strategic specialization in pharmaceuticals, biotech, API, CMO/CDMO, and formulations.\n\n` +
+        `Local Credibility – Long-standing relationships with regulators, procurement agencies, payors, and distributors.\n\n` +
+        `Proven Experience – 100+ transactions and strategic projects delivered across commercial, technical, regulatory, and IP domains.\n\n` +
+        `Value Creation Mindset – Supporting portfolio companies through licensing, diversification, and cost optimization initiatives.`,
+      gradient: 'from-purple-200/50 to-pink-200/50',
+    },
+    {
+      number: 3,
+      title: "Capabilities",
+      content: [
+        {
+          header: "Launch Excellence",
+          description: "We design and execute launch strategies that maximize impact. From defining objectives and milestones to measuring outcomes and correcting course, our approach ensures successful and sustainable product introductions.",
+        },
+        {
+          header: "Pricing & Market Access",
+          description: "Our pricing and market access experts design value-based models and reimbursement strategies that improve affordability while protecting margins. We provide competitive pricing intelligence, scenario modeling, and submission support for long-term success.",
+        },
+        {
+          header: "Localization Strategy",
+          description: "We help organizations establish a strong local footprint by evaluating distributors, benchmarking commercial terms, and enabling local manufacturing partnerships. Our feasibility studies and strategic frameworks empower clients to make confident localization decisions.",
+        },
+        {
+          header: "Strategy Consulting",
+          description: "From market entry and geographic expansion to portfolio optimization and operational excellence, we deliver actionable strategies that align organizations for growth and resilience.",
+        },
+        {
+          header: "Transactions",
+          description: "Our transaction advisory team supports investors and companies across commercial, technical, and regulatory due diligence. We provide valuation and deal structuring support, negotiate partnerships, and guide post-deal integration to capture synergies and maximize value.",
+        },
+      ],
+      gradient: 'from-sky-200/50 to-cyan-200/50',
+    },
+  ];

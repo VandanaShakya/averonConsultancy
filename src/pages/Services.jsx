@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { Calendar, Check} from 'lucide-react';
+import { Calendar, Check } from 'lucide-react';
 import images from '../assets/images';
 import { motion } from 'framer-motion'
 import { serviceBlocks, extraBlocks, companyTieupRightData, companyTieupLeftData, FEATURES_DATA } from './data';
-
 
 const Services = () => {
   const [loading, setLoading] = useState(true);
@@ -19,65 +18,86 @@ const Services = () => {
 
   if (loading) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-purple-600"></div>
-        <p className="mt-4 text-lg font-medium text-gray-700">
+      <motion.div
+        className="flex flex-col items-center justify-center min-h-screen bg-gray-50"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
+        <motion.div
+          className="rounded-full h-16 w-16 border-t-4 border-b-4 border-purple-600"
+          animate={{ rotate: 360 }}
+          transition={{ repeat: Infinity, duration: 1.2, ease: 'linear' }}
+        />
+        <motion.p className="mt-4 text-lg font-medium text-gray-700" initial={{ y: 8 }} animate={{ y: 0 }}>
           Loading Services...
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
     );
   }
   return (
     <>
 
     {/* services hero section */}
-   <div 
+   <motion.div 
       className="min-h-screen font-inter antialiased py-20 sm:py-32 flex items-center justify-center" 
-      // Setting a very light purple background, similar to the image
-      style={{ 
-        backgroundColor: '#f7f4fa', // A very light, warm purple/grey
-      }}
+      style={{ backgroundColor: '#f7f4fa' }}
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
         {/* Top Badge Button */}
-        <button 
+        <motion.button 
           className="inline-flex items-center px-5 py-2 mb-8 text-sm font-semibold text-gray-700 bg-white rounded-full shadow-lg transition duration-300 hover:shadow-xl hover:bg-gray-50 uppercase tracking-widest"
           style={{
             boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)'
           }}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0, transition: { delay: 0.05 } }}
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.98 }}
         >
           Welcome to Our Platform 
           <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
+        </motion.button>
 
         {/* Main Heading (Enhanced Responsive Size) */}
-       <h1 className="text-4xl sm:text-6xl lg:text-7xl font-light tracking-tight text-gray-900 mb-6 leading-tight">
+       <motion.h1 className="text-4xl sm:text-6xl lg:text-7xl font-light tracking-tight text-gray-900 mb-6 leading-tight"
+         initial={{ opacity: 0, y: 10 }}
+         animate={{ opacity: 1, y: 0, transition: { delay: 0.08 } }}
+       >
   Transform your ideas into 
-  <span className="hero-gradient-text block sm:inline font-extralight">
+  <motion.span className="hero-gradient-text block sm:inline font-extralight" initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.12 } }}>
     stunning, beautiful digital experiences
-  </span>
-</h1>
+  </motion.span>
+</motion.h1>
 
 
 
         {/* Subtitle (Enhanced Readability) */}
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-12 font-medium">
+        <motion.p className="text-xl text-gray-600 max-w-2xl mx-auto mb-12 font-medium"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { delay: 0.16 } }}
+        >
           Transform your ideas into reality with our comprehensive suite of development tools and resources.
-        </p>
+        </motion.p>
 
         {/* CTA Button */}
-        <button 
+        <motion.button 
           className="px-12 py-4 text-lg font-semibold rounded-full text-white transition duration-300 transform hover:scale-[1.03] intro-button-shadow"
           style={{
-            backgroundImage: 'linear-gradient(90deg, #a855f7, #c084fc)', // A slightly different gradient for the button
+            backgroundImage: 'linear-gradient(90deg, #a855f7, #c084fc)',
           }}
+          initial={{ scale: 0.98, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1, transition: { delay: 0.2 } }}
+          whileHover={{ scale: 1.04 }}
         >
           Get Started
-        </button>
+        </motion.button>
         
       </div>
-    </div>
+    </motion.div>
 
 
 
@@ -85,69 +105,55 @@ const Services = () => {
       <div className="min-h-screen bg-white py-16 px-4 sm:px-6 lg:px-8 font-['Inter']">
         {/* Header */}
         <div className="max-w-7xl mx-auto text-center mb-12">
-          <p className="text-sm font-semibold text-purple-600 uppercase tracking-widest mb-2">
+          <motion.p className="text-sm font-semibold text-purple-600 uppercase tracking-widest mb-2" initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.05 } }}>
             FEATURED CONTENT
-          </p>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
+          </motion.p>
+          <motion.h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight" initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.08 } }}>
             Our Latest News & Insight
-          </h1>
+          </motion.h1>
         </div>
 
         {/* Grid */}
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {loading
-            ? Array(3)
-              .fill(0)
-              .map((_, idx) => (
-                <div
-                  key={idx}
-                  className="animate-pulse flex flex-col bg-gray-200 rounded-xl shadow-lg overflow-hidden h-96"
-                >
-                  <div className="w-full h-72 bg-gray-300"></div>
-                  <div className="p-6 space-y-4">
-                    <div className="h-6 bg-gray-300 rounded w-3/4"></div>
-                    <div className="h-4 bg-gray-300 rounded w-full"></div>
-                    <div className="h-4 bg-gray-300 rounded w-5/6"></div>
-                  </div>
+          {serviceBlocks.map((block, index) => (
+            <motion.div
+              key={index}
+              className="flex flex-col bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:scale-[1.02] cursor-pointer"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.12, duration: 0.6 }}
+              whileHover={{ scale: 1.03 }}
+            >
+              <div className="w-full h-72 overflow-hidden">
+                <motion.img
+                  src={block.image}
+                  alt={block.title}
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  initial={{ scale: 1 }}
+                  whileHover={{ scale: 1.05 }}
+                />
+              </div>
+              <div className="p-6">
+                <div className="flex items-center text-sm mb-3">
+                  <span className="text-pink-500 font-medium uppercase mr-4">
+                    {block.tag}
+                  </span>
+                  <Calendar className="w-4 h-4 text-gray-400 mr-1" />
+                  <span className="text-gray-500">{block.date}</span>
                 </div>
-              ))
-            : serviceBlocks.map((block, index) => (
-              <motion.div
-                key={index}
-                className="flex flex-col bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:scale-[1.02] cursor-pointer"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2, duration: 0.6 }}
-                whileHover={{ scale: 1.03 }}
-              >
-                <div className="w-full h-72 overflow-hidden">
-                  <img
-                    src={block.image}
-                    alt={block.title}
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center text-sm mb-3">
-                    <span className="text-pink-500 font-medium uppercase mr-4">
-                      {block.tag}
-                    </span>
-                    <Calendar className="w-4 h-4 text-gray-400 mr-1" />
-                    <span className="text-gray-500">{block.date}</span>
-                  </div>
 
-                  <h2 className="text-xl font-bold text-gray-900 leading-tight mb-4">
-                    {block.title}
-                  </h2>
+                <h2 className="text-xl font-bold text-gray-900 leading-tight mb-4">
+                  {block.title}
+                </h2>
 
-                  <ul className="text-sm text-gray-700 space-y-2 list-none pl-0">
-                    {block.points.map((point, i) => (
-                      <li key={i}>• {point}</li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            ))}
+                <ul className="text-sm text-gray-700 space-y-2 list-none pl-0">
+                  {block.points.map((point, i) => (
+                    <li key={i}>• {point}</li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
         {/* Extra Row */}
@@ -157,59 +163,45 @@ const Services = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
-          {loading
-            ? Array(2)
-              .fill(0)
-              .map((_, idx) => (
-                <div
-                  key={idx}
-                  className="animate-pulse flex flex-col bg-gray-200 rounded-xl shadow-lg overflow-hidden h-96 w-full max-w-sm"
-                >
-                  <div className="w-full h-72 bg-gray-300"></div>
-                  <div className="p-6 space-y-4">
-                    <div className="h-6 bg-gray-300 rounded w-3/4"></div>
-                    <div className="h-4 bg-gray-300 rounded w-full"></div>
-                    <div className="h-4 bg-gray-300 rounded w-5/6"></div>
-                  </div>
+          {extraBlocks.map((block, index) => (
+            <motion.div
+              key={index}
+              className="flex flex-col bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:scale-[1.02] cursor-pointer w-full max-w-sm"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.12, duration: 0.6 }}
+              whileHover={{ scale: 1.03 }}
+            >
+              <div className="w-full h-72 overflow-hidden">
+                <motion.img
+                  src={block.image}
+                  alt={block.title}
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  initial={{ scale: 1 }}
+                  whileHover={{ scale: 1.05 }}
+                />
+              </div>
+              <div className="p-6">
+                <div className="flex items-center text-sm mb-3">
+                  <span className="text-green-500 font-medium uppercase mr-4">
+                    {block.tag}
+                  </span>
+                  <Calendar className="w-4 h-4 text-gray-400 mr-1" />
+                  <span className="text-gray-500">{block.date}</span>
                 </div>
-              ))
-            : extraBlocks.map((block, index) => (
-              <motion.div
-                key={index}
-                className="flex flex-col bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl hover:scale-[1.02] cursor-pointer w-full max-w-sm"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2, duration: 0.6 }}
-                whileHover={{ scale: 1.03 }}
-              >
-                <div className="w-full h-72 overflow-hidden">
-                  <img
-                    src={block.image}
-                    alt={block.title}
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center text-sm mb-3">
-                    <span className="text-green-500 font-medium uppercase mr-4">
-                      {block.tag}
-                    </span>
-                    <Calendar className="w-4 h-4 text-gray-400 mr-1" />
-                    <span className="text-gray-500">{block.date}</span>
-                  </div>
 
-                  <h2 className="text-xl font-bold text-gray-900 leading-tight mb-4">
-                    {block.title}
-                  </h2>
+                <h2 className="text-xl font-bold text-gray-900 leading-tight mb-4">
+                  {block.title}
+                </h2>
 
-                  <ul className="text-sm text-gray-700 space-y-2 list-none pl-0">
-                    {block.points.map((point, i) => (
-                      <li key={i}>• {point}</li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            ))}
+                <ul className="text-sm text-gray-700 space-y-2 list-none pl-0">
+                  {block.points.map((point, i) => (
+                    <li key={i}>• {point}</li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
 
@@ -223,15 +215,15 @@ const Services = () => {
         {/* Header */}
         <div className="lg:flex lg:justify-between lg:items-end mb-12 lg:mb-16">
           <div className="mb-6 lg:mb-0">
-            <h2 className="title-gradient text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
+            <motion.h2 className="title-gradient text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
               Case Structure
-            </h2>
+            </motion.h2>
           </div>
-          <p className="text-gray-600 max-w-lg lg:text-right text-base sm:text-lg">
+          <motion.p className="text-gray-600 max-w-lg lg:text-right text-base sm:text-lg" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
             A Structured Case Framework Streamlines Patient Care, From
             Diagnosis To Treatment. It Ensures Accurate Documentation,
             Efficient Management, And Improved Health Outcomes.
-          </p>
+          </motion.p>
         </div>
 
         {/* Grid Layout */}
@@ -239,7 +231,7 @@ const Services = () => {
           {/* Left Side Blocks */}
           <div className="space-y-8 order-2 lg:order-1">
             {companyTieupLeftData.map((step, index) => (
-              <div className="flex justify-center items-center min-h-screen bg-gray-100 p-4">
+              <motion.div className="flex justify-center items-center bg-gray-100" key={index} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: index * 0.08 }}>
       <div className="bg-white rounded-xl shadow-lg p-6 w-full max-w-sm">
         {/* Top Section: Icon and Tag */}
         <div className="flex justify-between items-center mb-4">
@@ -279,32 +271,36 @@ const Services = () => {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
             ))}
           </div>
 
           {/* Center Block */}
-          <div
+          <motion.div
             className="relative flex justify-center items-center order-1 lg:order-2 p-4 sm:p-8 rounded-2xl"
             style={{
               backgroundColor: "white",
               boxShadow: "0 10px 15px rgba(0,0,0,0.05)",
             }}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0, transition: { delay: 0.12 } }}
           >
             <div className="overflow-hidden rounded-xl shadow-2xl w-full h-auto max-w-md lg:max-w-none">
               <div className="w-full h-[600px] rounded-xl relative">
-                <img
+                <motion.img
                   src={images.logo}
                   alt="Central image block"
                   className="w-full h-full object-cover rounded-xl"
+                  initial={{ scale: 0.98 }}
+                  animate={{ scale: 1 }}
                 />
               </div>
             </div>
-          </div>
+          </motion.div>
 
           <div className="space-y-8 order-3 lg:order-3">
             {companyTieupRightData.map((step, index) => (
-             <div className="flex justify-center items-center min-h-screen bg-gray-100 p-4">
+             <motion.div className="flex justify-center items-center bg-gray-100" key={index} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: index * 0.08 }}>
       <div className="bg-white rounded-xl shadow-lg p-6 w-full max-w-sm">
         <div className="flex justify-between items-center mb-4">
           <div className="bg-purple-200 p-3 rounded-lg flex items-center justify-center">
@@ -344,7 +340,7 @@ const Services = () => {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
             ))}
           </div>
         </div>
@@ -352,7 +348,7 @@ const Services = () => {
     </div>
 
 {/* strategy and execution */}
-        <div className="min-h-screen font-inter antialiased py-20 sm:py-32" style={{ backgroundColor: '#ffffff' }}>
+        <motion.div className="min-h-screen font-inter antialiased py-20 sm:py-32" style={{ backgroundColor: '#ffffff' }} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>
       <script src="https://cdn.tailwindcss.com"></script>
       <style>{`
         .font-inter { font-family: 'Inter', sans-serif; }
@@ -369,24 +365,27 @@ const Services = () => {
         
         {/* Header and Subtitle */}
         <div className="text-center mb-16">
-          <h2 className="gradient-text text-4xl sm:text-5xl font-extrabold mb-4">
+          <motion.h2 className="gradient-text text-4xl sm:text-5xl font-extrabold mb-4" initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.06 } }}>
             Why Choose Us
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p className="text-xl text-gray-600 max-w-2xl mx-auto" initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.08 } }}>
             From Strategy to Execution: Solutions that Deliver Impact
-          </p>
+          </motion.p>
         </div>
 
         {/* Features Grid (Responsive layout) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {FEATURES_DATA.map((item, index) => (
-            <div
+            <motion.div
               key={index}
               className={`p-6 sm:p-8 bg-white rounded-2xl border-l-4 ${item.borderColor} transition duration-300 hover:translate-y-[-2px] flex flex-col relative overflow-hidden group`}
               style={{
-                // Applying shadow from item data
                 boxShadow: `0 4px 12px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.03), 0 15px 30px -10px ${item.shadowColor}`,
               }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.06 }}
+              whileHover={{ translateY: -6 }}
             >
               
               {/* === Back Image/Icon Placeholder (Absolute Positioned) === */}
@@ -431,12 +430,12 @@ const Services = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
         
       </div>
-    </div>
+    </motion.div>
 
     </>
   )

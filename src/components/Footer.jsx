@@ -6,7 +6,7 @@ import  images  from '../assets/images';
 
 const Footer = () => {
     return (
-        <footer className="relative bg-white py-12 px-4 sm:px-6 lg:px-8 text-gray-700 font-sans">
+        <footer className="relative bg-white py-12 px-4 sm:px-6 lg:px-8 text-gray-700 font-sans mt-20">
   {/* Background Image Block */}
   <div
     className="absolute inset-0 bg-cover bg-center opacity-20"
@@ -105,7 +105,7 @@ const Footer = () => {
     </div>
 
     {/* Copyright Section */}
-    <div className="mt-8 border-t border-gray-200 pt-6 flex flex-col sm:flex-row items-center justify-between text-sm text-gray-500 space-y-4 sm:space-y-0">
+    <div className="mt-8 border-gray-200 pt-6 flex flex-col sm:flex-row items-center justify-between text-sm text-gray-500 space-y-4 sm:space-y-0">
       <div className="text-center sm:text-left">
         <p className="font-medium text-gray-700">
           © {new Date().getFullYear()} CareWell. All rights reserved
